@@ -1,0 +1,11 @@
+board:
+  name: grove_vision_ai
+  vendor: seeed
+  revision:
+    format: number
+    default: "2"
+    exact: true
+    revisions:
+    - name: "2"
+  socs:
+  - name: hx6538

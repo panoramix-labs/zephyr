@@ -1,0 +1,20 @@
+# Copyright (c) 2024 Panoramix Labs
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_HX6538
+	bool "HX6538 SoC, also known as 'WiseEye2' and 'EP II'"
+
+config SOC_HX6538_CM55M
+	bool "Main core with more resources"
+	select SOC_HX6538
+	help
+	  Frequency up to 400 MHz
+
+config SOC_HX6538_CM55S
+	bool "Small core with fewer resources"
+	select SOC_HX6538
+	help
+	  Frequency up to 150 MHz
+
+config SOC
+	default "HX6538" if SOC_HX6538

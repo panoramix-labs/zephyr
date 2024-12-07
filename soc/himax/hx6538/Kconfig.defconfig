@@ -1,0 +1,23 @@
+# Copyright (c) 2024 Panoramix Labs
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_HX6538
+
+config NUM_IRQS
+	default 100
+
+endif # SOC_HX6538
+
+if SOC_HX6538_CM55M
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 400000000
+
+endif # SOC_HX6538_CM55M
+
+if SOC_HX6538_CM55S
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 150000000
+
+endif # SOC_HX6538_CM55S

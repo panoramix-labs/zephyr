@@ -1,0 +1,5 @@
+socs:
+  - name: hx6538
+    cpuclusters:
+      - name: cm55m
+      - name: cm55s

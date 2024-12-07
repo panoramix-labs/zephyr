@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2024 Panoramix Labs
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <himax/hx6538_cm55m.dtsi>
+
+/ {
+	chosen {
+		zephyr,console = &uart0;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash1;
+	};
+};
+
+&uart0 {
+	status = "okay";
+};

@@ -1,0 +1,10 @@
+# Copyright (c) 2024 Panoramix Labs
+# SPDX-License-Identifier: Apache-2.0
+
+config UART_DW_UART
+	bool "Designware UART driver"
+	depends on DT_HAS_SNPS_DW_UART_ENABLED
+	select SERIAL_HAS_DRIVER
+	help
+	  Enable the Synopsys Designware UART driver, built into Synopsys ARC
+	  SoC as well as other non-Synopsys SoCs.

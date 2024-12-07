@@ -1,0 +1,10 @@
+# Copyright (c) 2024 Panoramix Labs
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_HX6538
+	select ARM
+	select CPU_HAS_FPU
+	select CPU_HAS_ARM_SAU
+	select CPU_HAS_ARM_MPU
+	select CPU_CORTEX_M55
+	imply XIP

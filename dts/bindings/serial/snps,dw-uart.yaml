@@ -1,0 +1,12 @@
+# Copyright (c) 2024, Panoramix Labs
+# SPDX-License-Identifier: Apache-2.0
+
+description: Synopsys Designware UART, present on ARC and non-ARC SoCs
+
+compatible: "snps,dw-uart"
+
+include: uart-controller.yaml
+
+properties:
+  reg:
+    required: true

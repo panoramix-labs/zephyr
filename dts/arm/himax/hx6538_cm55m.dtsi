@@ -1,0 +1,72 @@
+/*
+ * Copyright (c) 2024 Panoramix Labs
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <arm/armv8.1-m.dtsi>
+
+/ {
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m55f";
+			reg = <0>;
+		};
+	};
+
+	soc {
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		itcm: itcm@0 {
+			compatible = "zephyr,memory-region", "arm,itcm";
+			reg = <0x00000000 0x40000>;
+			zephyr,memory-region = "ITCM";
+		};
+
+		dtcm: dtcm@20000000 {
+			compatible = "zephyr,memory-region", "arm,dtcm";
+			reg = <0x20000000 0x40000>;
+			zephyr,memory-region = "DTCM";
+		};
+
+		sram0: sram@24000000 {
+			compatible = "mmio-sram";
+			reg = <0x24000000 0x100000>;
+		};
+
+		sram1: sram@24100000 {
+			compatible = "mmio-sram";
+			reg = <0x24100000 0x100000>;
+		};
+
+		sram2: sram@26000000 {
+			compatible = "mmio-sram";
+			reg = <0x26000000 0x60000>;
+		};
+
+		flash1: flash@2a000000 {
+			compatible = "soc-nv-flash";
+			reg = <0x2a000000 0x1000000>;
+		};
+
+		flash2: flash@2c000000 {
+			compatible = "soc-nv-flash";
+			reg = <0x2c000000 0x1000000>;
+		};
+
+		uart0: uart@44003000 {
+			compatible = "snps,dw-uart";
+			reg = <0x44003000 0x1000>;
+			status = "disable";
+		};
+	};
+};
+
+&nvic {
+	arm,num-irq-priority-bits = <3>;
+};
